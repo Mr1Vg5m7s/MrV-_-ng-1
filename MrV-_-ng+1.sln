@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Db_First_flame", "MrV-_-ng+1\Db_First_flame.csproj", "{6E0608D5-8188-418A-A54B-64072E6B4F99}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFirstFlame", "CodeFirstFlame\CodeFirstFlame.csproj", "{D4C2A08C-E7D6-43D6-AAF9-3BC9E49B4B0B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{6E0608D5-8188-418A-A54B-64072E6B4F99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E0608D5-8188-418A-A54B-64072E6B4F99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E0608D5-8188-418A-A54B-64072E6B4F99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4C2A08C-E7D6-43D6-AAF9-3BC9E49B4B0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4C2A08C-E7D6-43D6-AAF9-3BC9E49B4B0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4C2A08C-E7D6-43D6-AAF9-3BC9E49B4B0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4C2A08C-E7D6-43D6-AAF9-3BC9E49B4B0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
