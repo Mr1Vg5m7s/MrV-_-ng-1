@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace CodeFirstFlame.Models
 {
-        [Table("Flame")]
+       //[Table("Flame")]
     internal class Student
     {
         
         //[Column("stud_id")]
         public int Id { get; set; }
-        [Required] 
+       // [Required] 
         public string? Name { get; set; }
         public string? Surname { get; set; }
-        public DateOnly BirthDay { get; set; }
+        public DateTime BirthDay { get; set; }
         public decimal Scholarship { get; set; }
 
         int code;

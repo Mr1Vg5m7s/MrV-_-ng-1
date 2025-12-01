@@ -9,7 +9,9 @@
                 var students = context.Students.ToList();
                 foreach (var student in students)
                 {
-                    Console.WriteLine(student);
+                    Console.WriteLine("ssss");
+                    Console.WriteLine(student.Name);
+
                 }
             }
         }

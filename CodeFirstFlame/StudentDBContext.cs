@@ -30,9 +30,17 @@ namespace CodeFirstFlame
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Models.Student>().ToTable("Flame");
-            modelBuilder.Entity<Student>().Property("GetCode").HasField("code");
+            //modelBuilder.Entity<Models.Student>().ToTable("Flame");
+           // modelBuilder.Entity<Student>().Property("GetCode").HasField("code");
+           // modelBuilder.Entity<Models.Student>().Property(s => s.Name).IsRequired();
 
+            //modelBuilder.Entity<Student>().HasAlternateKey(s => s.Surname).HasName("codik");
+            modelBuilder.Entity<Models.Student>().ToTable(t => t.HasCheckConstraint("CK_Students_Name", "Name <>''"));
+            modelBuilder.Entity<Models.Student>().HasData(
+             new Models.Student { Id = 1, Name = "Ivan", Surname = "Ivanov", BirthDay = new DateTime(2000, 1, 1) },
+             new Models.Student { Id = 2, Name = "Petr", Surname = "Petrov", BirthDay = new DateTime(2001, 2, 2) },
+             new Models.Student { Id = 3, Name = "Sidor", Surname = "Sidorov", BirthDay = new DateTime(2002, 3, 3) }
+);
         }
     }
 }
