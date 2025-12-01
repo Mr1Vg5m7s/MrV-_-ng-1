@@ -1,23 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CodeFirstFlame.Models
 {
+        [Table("Flame")]
     internal class Student
     {
-        public int StudentId { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
+        
+        //[Column("stud_id")]
+        public int Id { get; set; }
+        [Required]
+        public string? Name { get; set; }
+        public string? Surname { get; set; }
         public DateOnly BirthDay { get; set; }
         public decimal Scholarship { get; set; }
 
-        public override string ToString()
+        int code;
+        public int GetCode => code;
+
+        /*public override string ToString()
         {
-            return $"StudentId: {StudentId}, Name: {Name}, Surname: {Surname}, BirthDay: {BirthDay}, Stepyha: {Scholarship}";
-        }
+            return $"StudentId: {Id}, Name: {Name}, Surname: {Surname}, BirthDay: {BirthDay}, Stepyha: {Scholarship}";
+        }*/
 
 
     }
