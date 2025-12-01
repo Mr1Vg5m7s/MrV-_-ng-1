@@ -14,7 +14,7 @@ namespace CodeFirstFlame.Models
         
         //[Column("stud_id")]
         public int Id { get; set; }
-        [Required]
+        [Required] 
         public string? Name { get; set; }
         public string? Surname { get; set; }
         public DateOnly BirthDay { get; set; }
