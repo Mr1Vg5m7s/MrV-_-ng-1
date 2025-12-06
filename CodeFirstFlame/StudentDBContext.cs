@@ -10,7 +10,7 @@ namespace CodeFirstFlame
 {
     internal class StudentDBContext : DbContext
     {
-        public StudentDBContext() 
+        public StudentDBContext()
         {
             Database.EnsureDeleted();
             Database.EnsureCreated();
@@ -31,16 +31,29 @@ namespace CodeFirstFlame
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //modelBuilder.Entity<Models.Student>().ToTable("Flame");
-           // modelBuilder.Entity<Student>().Property("GetCode").HasField("code");
-           // modelBuilder.Entity<Models.Student>().Property(s => s.Name).IsRequired();
+            // modelBuilder.Entity<Student>().Property("GetCode").HasField("code");
+            // modelBuilder.Entity<Models.Student>().Property(s => s.Name).IsRequired();
 
             //modelBuilder.Entity<Student>().HasAlternateKey(s => s.Surname).HasName("codik");
-            modelBuilder.Entity<Models.Student>().ToTable(t => t.HasCheckConstraint("CK_Students_Name", "Name <>''"));
+
+            modelBuilder.Entity<Models.Group>().HasData(
+                new Models.Group { Id = 1, Name = "Group A" },
+                new Models.Group { Id = 2, Name = "Group B" }
+            );
+
+
+            modelBuilder.Entity<Models.StudInfo>().HasData(
+                new Models.StudInfo { Id = 1, Login = "ivanov", HashPassword = "ivanov123" },
+                new Models.StudInfo { Id = 2, Login = "petrov", HashPassword = "petrov123" },
+                new Models.StudInfo { Id = 3, Login = "sidorov", HashPassword = "sidorov123" }
+            );
+
             modelBuilder.Entity<Models.Student>().HasData(
-             new Models.Student { Id = 1, Name = "Ivan", Surname = "Ivanov", BirthDay = new DateTime(2000, 1, 1) },
-             new Models.Student { Id = 2, Name = "Petr", Surname = "Petrov", BirthDay = new DateTime(2001, 2, 2) },
-             new Models.Student { Id = 3, Name = "Sidor", Surname = "Sidorov", BirthDay = new DateTime(2002, 3, 3) }
-);
+                new Models.Student { Id = 1, Surname = "Ivan", Name = "Ivanov", BirthDay = new DateTime(2000, 1, 1), GroupId = 1, StudInfoId = 1 },
+                new Models.Student { Id = 2, Surname = "Petr", Name = "Petrov", BirthDay = new DateTime(2001, 2, 2), GroupId = 2, StudInfoId = 2 },
+                new Models.Student { Id = 3, Surname = "Sidor", Name = "Sidorov", BirthDay = new DateTime(2002, 3, 3), GroupId = 1, StudInfoId = 3 }
+            );
+
         }
     }
 }

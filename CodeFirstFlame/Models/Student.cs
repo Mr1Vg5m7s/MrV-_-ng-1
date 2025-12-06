@@ -19,14 +19,20 @@ namespace CodeFirstFlame.Models
         public string? Surname { get; set; }
         public DateTime BirthDay { get; set; }
         public decimal Scholarship { get; set; }
+        public int? GroupId { get; set; }
 
-        int code;
-        public int GetCode => code;
+        public Group? Group { get; set; }
+        public int? StudInfoId { get; set; }
+        public StudInfo? StudInfo { get; set; }
 
-        /*public override string ToString()
+        public List<Subject> Subjects { get; set; }
+        public List<StudentSubject>? StudentSubjects { get; set; }
+
+
+        public override string ToString()
         {
-            return $"StudentId: {Id}, Name: {Name}, Surname: {Surname}, BirthDay: {BirthDay}, Stepyha: {Scholarship}";
-        }*/
+            return $"{Id}: {Name} {Surname}, born on {BirthDay.ToShortDateString()}, Group: {Group?.Name}, Login: {StudInfo?.Login}, HashPassword: {StudInfo?.HashPassword}";
+        }
 
 
     }
