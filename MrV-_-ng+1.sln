@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Db_First_flame", "MrV-_-ng+
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeFirstFlame", "CodeFirstFlame\CodeFirstFlame.csproj", "{D4C2A08C-E7D6-43D6-AAF9-3BC9E49B4B0B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore_MrV", "BookStore\BookStore_MrV.csproj", "{19709560-914B-484C-BAAE-7F985DA0A488}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D4C2A08C-E7D6-43D6-AAF9-3BC9E49B4B0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4C2A08C-E7D6-43D6-AAF9-3BC9E49B4B0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4C2A08C-E7D6-43D6-AAF9-3BC9E49B4B0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19709560-914B-484C-BAAE-7F985DA0A488}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19709560-914B-484C-BAAE-7F985DA0A488}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19709560-914B-484C-BAAE-7F985DA0A488}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19709560-914B-484C-BAAE-7F985DA0A488}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -25,7 +25,7 @@ namespace CodeFirstFlame.Models
         public int? StudInfoId { get; set; }
         public StudInfo? StudInfo { get; set; }
 
-        public List<Subject> Subjects { get; set; }
+        public List<Subject>? Subjects { get; set; }
         public List<StudentSubject>? StudentSubjects { get; set; }
 
 

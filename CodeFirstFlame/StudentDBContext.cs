@@ -12,8 +12,8 @@ namespace CodeFirstFlame
     {
         public StudentDBContext()
         {
-            Database.EnsureDeleted();
-            Database.EnsureCreated();
+            //Database.EnsureDeleted();
+            //Database.EnsureCreated();
         }
 
         public StudentDBContext(DbContextOptions<StudentDBContext> options)
@@ -23,6 +23,10 @@ namespace CodeFirstFlame
 
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<Group> Groups { get; set; }
+        public virtual DbSet<Models.User> User { get;  set; }
+        public virtual DbSet<Models.User> Admin { get; set; }
+        public virtual DbSet<Models.User> Guest { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
@@ -54,6 +58,11 @@ namespace CodeFirstFlame
                 new Models.Student { Id = 3, Surname = "Sidor", Name = "Sidorov", BirthDay = new DateTime(2002, 3, 3), GroupId = 1, StudInfoId = 3 }
             );
 
+
+           // modelBuilder.Entity<User>().UseTphMappingStrategy();
+           //modelBuilder.Entity<User>().UseTpcMappingStrategy();
+           modelBuilder.Entity<User>().UseTpcMappingStrategy();
+           
         }
     }
 }

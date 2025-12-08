@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CodeFirstFlame.Models;
+using Microsoft.EntityFrameworkCore;
 using System.Text.RegularExpressions;
 
 namespace CodeFirstFlame
@@ -16,7 +17,7 @@ namespace CodeFirstFlame
 
                 //db.Students.Add(student1);
                 //db.SaveChanges();
-
+                /*
                 var students = db.Students
                     .Include(s => s.Group)
                     .Include(s => s.StudInfo)
@@ -24,7 +25,18 @@ namespace CodeFirstFlame
                 foreach (var student in students)
                 {
                     Console.WriteLine(student);
-                }
+                }*/
+
+                User user = new User { Username = "name" };
+                Admin admin = new Admin { Username = "MrV", Role = "SuperAdmin" };
+                Guest guest = new Guest { Username = "Visitor1", VisitDate = DateTime.Now };
+            
+                db.User.Add(user);
+                db.Admin.Add(admin);
+                db.Guest.Add(guest);
+                db.SaveChanges();
+
+                
             }
         }
     }
